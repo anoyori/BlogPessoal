@@ -19,7 +19,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
-	auth.userDetailsService(userDetailsService);
+		auth.userDetailsService(userDetailsService);
 	}
 	
 	@Bean
@@ -30,7 +30,7 @@ public class BasicSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure (HttpSecurity http) throws Exception{
 		http.authorizeRequests()
-		.antMatchers(" ").permitAll()
+		//.antMatchers("").permitAll()
 		.antMatchers("/usuarios/logar").permitAll()
 		.antMatchers("/usuarios/cadastrar").permitAll()
 		.anyRequest().authenticated()
